@@ -1,0 +1,25 @@
+randomjsf - Jenkins Small Fast (JSF) RNG for Ruby
+
+http://burtleburtle.net/bob/rand/smallprng.html
+https://www.pcg-random.org/posts/some-prng-implementations.html
+
+this code is based on the above and the JSF implementation in the
+Game::Xomb Perl module
+
+
+INSTALLATION
+
+there are probably better ways to do this
+
+    gem build randomjsf.gemspec
+    gem environment   # find a suitable GEM PATH
+    gem install -i ... randomjsf
+
+
+USAGE
+
+there is an "irand" method (and also a coinflip method) that uses
+whatever seed is associated with the RNG. this method returns a number
+that came from a 32-bit unsigned integer
+
+    ruby -rrandomjsf -e 'x = RandomJsf.new 42; puts x.irand'
